@@ -45,8 +45,57 @@ function pingColor2($IP){
 <html>
     <head>
     <title>B1网络状况</title>
+	<link rel="stylesheet" href="../../lib/layuin/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/weadmin.css">
     </head>
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	<body>
+	<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+	<script>
+window.alert = function(name){
+                var iframe = document.createElement("IFRAME");
+                iframe.style.display="none";
+                document.documentElement.appendChild(iframe);
+                window.frames[0].window.alert(name);
+                iframe.parentNode.removeChild(iframe);
+            }
+            window.confirm = function (message) {
+                var iframe = document.createElement("IFRAME");
+                iframe.style.display = "none";
+                iframe.setAttribute("src", 'data:text/plain,');
+                document.documentElement.appendChild(iframe);
+                var alertFrame = window.frames[0];
+                var result = alertFrame.window.confirm(message);
+                iframe.parentNode.removeChild(iframe);
+                return result;
+      }
+
+</script> 
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+		<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">信息查询</a>
+		<a href="">网络信息</a>
+        <a>
+          <cite>B1终端信息</cite></a>
+      </span>
+			<a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:30px">&#x1002;</i></a>
+		</div>
+		
+  <blockquote class="layui-elem-quote layui-quote-nm">
+	<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1055.588px" height="921.985px" viewBox="0 0 555.588 321.985" enable-background="new 0 0 555.588 321.985"
 	 xml:space="preserve">
 
@@ -25560,4 +25609,6 @@ function pingColor2($IP){
 		C239.64,159.846,239.871,160.078,240.154,160.078"/>
 </g>
 </svg>
+	</body>
+
 </html>
